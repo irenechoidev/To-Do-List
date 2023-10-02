@@ -1,0 +1,30 @@
+.navbar {
+    background: lightpink;
+    min-height: 30px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar-title {
+    color: #64500f;
+}
+
+.navbar .add-todo {
+    margin-left: auto;
+}
+
+.navbar button {
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background: orange;
+    color: white;
+    font-size: 26px;
+    width: 42px;
+    height: 42px;
+}
+
+.navbar button:hover {
+    background: orangered;
+}

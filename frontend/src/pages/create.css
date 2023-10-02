@@ -1,0 +1,48 @@
+.create-todo {
+    height: 100vh;
+    overflow: auto;
+}
+
+.create-todo h3 {
+    font-size: 28px;
+}
+
+.create-todo form {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.create-todo label {
+    text-align: left;
+    display: block;
+}
+
+.create-todo input, .create-todo textarea {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-family: 'Arial';
+    display: block;
+}
+
+.create-todo .button-container {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.create-todo button {
+    width: 50%;
+    color: white;
+    background: orange;
+    border: 0;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.create-todo button:hover {
+    background: orangered;
+}

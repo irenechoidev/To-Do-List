@@ -1,0 +1,38 @@
+.default-todo {
+    border: solid black;
+    max-width: 600px;
+    padding: 30px;
+    margin: 30px auto;
+    cursor: pointer;
+}
+
+.default-todo:hover {
+    background: lightgrey;
+}
+
+.details-todo {
+    cursor: auto;
+}
+
+.details-todo:hover {
+    background: white;
+}
+
+.default-todo .todo-header {
+    display: flex;
+    align-items: center;
+}
+
+.default-todo .buttons-container {
+    margin-left: auto;
+}
+
+.default-todo i {
+    cursor: pointer;
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.default-todo i:hover {
+    color: red;
+}
