@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './create.css';
+import './css/create.css';
 
 const Create = () => {
     const [title, setTitle] = useState('');

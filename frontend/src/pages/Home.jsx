@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { getTodos } from './operations/home-operations';
 import Todo from '../components/Todo';
-import './home.css';
+import './css/home.css';
 
 const Home = () => {
+    const [todos, setTodos] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const dbTodos = await getTodos();
+            setTodos(dbTodos);
+        };
+
+        fetchData();
+    }, [])
+
+
     return (
         <div className='home-container'>
             {/* todo list */}
             <div>
-                <Todo 
-                    title = 'Bake Madeline' 
-                    description = 'Bake for 60 seconds'
-                    isDetails = {false}
-                />
-                <Todo 
-                    title = 'Make Madeline' 
-                    description = 'Make for 60 seconds'
-                    isDetails = {false}
-                />
+                {todos.map(t => (
+                    <Todo 
+                        key = {t._id}
+                        title = {t.title}
+                        description = {t.description}
+                        isDetails = {false}
+                    />
+                ))}
             </div>
         </div>
     );

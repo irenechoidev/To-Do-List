@@ -38,7 +38,7 @@ exports.updateTodo = async (req, res) => {
     const { title, description } = req.body;
 
     try {
-        await Todo.updateOne({ _id: id }, { title , description })
+        await Todo.updateOne({ _id: id }, { title , description });
     } catch (error) {
         message = error.message; 
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import Todo from '../components/Todo';
-import './details.css';
+import './css/details.css';
 
 const Details = () => {
     return (

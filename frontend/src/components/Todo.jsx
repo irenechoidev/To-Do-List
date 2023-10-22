@@ -1,18 +1,14 @@
 import React from 'react';
-import './todo.css';
+import './css/todo.css';
 
-const Todo = ({ 
-    title, 
-    description,
-    isDetails
-}) => {
+const Todo = ({ title, description, isDetails }) => {
     let containerClassName = 'default-todo';
     if (isDetails) {
         containerClassName = 'default-todo details-todo';
     }
 
     return (
-        <div className =  {containerClassName}>
+        <div className = {containerClassName}>
             <div className = 'todo-header'>
                 <h3>{title}</h3>
 
