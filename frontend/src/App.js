@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Create from './pages/Create';
 import Details from './pages/Details';
 import DeadPage from './pages/DeadPage';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path = '/' element = {<Home />} />
           <Route path = '/create' element = {<Create />} />
           <Route path = '/todo/:id' element = {<Details />} />
+          <Route path = '/login' element = {<Login />} />
           <Route path = '*' element = {<DeadPage />} />
         </Routes>
       </BrowserRouter>
