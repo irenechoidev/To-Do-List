@@ -1,14 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './css/todo.css';
 
-const Todo = ({ title, description, isDetails }) => {
+const Todo = ({ id, title, description, isDetails }) => {
     let containerClassName = 'default-todo';
     if (isDetails) {
         containerClassName = 'default-todo details-todo';
     }
 
+    const navigate = useNavigate();
+
     return (
-        <div className = {containerClassName}>
+        <div className = {containerClassName} onClick={() => navigate(`/todo/${id}`)}>
             <div className = 'todo-header'>
                 <h3>{title}</h3>
 

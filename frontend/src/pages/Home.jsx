@@ -23,6 +23,7 @@ const Home = () => {
                 {todos.map(t => (
                     <Todo 
                         key = {t._id}
+                        id = {t._id}
                         title = {t.title}
                         description = {t.description}
                         isDetails = {false}

@@ -8,6 +8,11 @@
 
 .navbar .navbar-title {
     color: #64500f;
+    cursor: pointer;
+}
+
+.navbar .navbar-title:hover {
+    color: #a48213;
 }
 
 .navbar .add-todo {

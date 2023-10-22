@@ -1,0 +1,11 @@
+.dead-page-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+}
+
+.dead-page-container h1 {
+    margin: auto;
+    margin-top: 20%;
+}

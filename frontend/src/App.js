@@ -3,18 +3,19 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Create from './pages/Create';
 import Details from './pages/Details';
+import DeadPage from './pages/DeadPage';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-
       <BrowserRouter>
+        <Navbar />
+
         <Routes>
           <Route path = '/' element = {<Home />} />
           <Route path = '/create' element = {<Create />} />
           <Route path = '/todo/:id' element = {<Details />} />
-          <Route path = '*' element = {<h1>DEAD PAGE</h1>} />
+          <Route path = '*' element = {<DeadPage />} />
         </Routes>
       </BrowserRouter>
     </div>
