@@ -68,5 +68,7 @@ exports.getTodos = async (req, res) => {
     // const todos = await Todo.find({ username: username });
     const todos = await Todo.find({ username });
 
+    // sort Date from biggest to smallest (most recent at top)
+    todos.sort((a, b) => b.createdDate - a.createdDate);
     res.json(todos);  
 }
