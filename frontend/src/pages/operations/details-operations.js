@@ -9,8 +9,5 @@ export const getTodo = async (id) => {
 }
 
 export const deleteTodo = async (id) => {
-    const response = await axios.delete(`${API_ENDPOINT}/todo/${id}`);
-    const object = response.data;
-
-    return object;
+    await axios.delete(`${API_ENDPOINT}/todo/${id}`);
 }
