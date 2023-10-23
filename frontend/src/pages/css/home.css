@@ -2,3 +2,10 @@
     height: 100vh;
     overflow: auto;
 }
+
+.home-container input {
+    display: block;
+    width: 35%;
+    margin: 30px auto;
+    padding: 10px;
+}

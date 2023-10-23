@@ -5,19 +5,26 @@ import './css/home.css';
 
 const Home = () => {
     const [todos, setTodos] = useState([]);
+    const [prefix, setPrefix] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
-            const dbTodos = await getTodos();
+            const dbTodos = await getTodos(prefix);
             setTodos(dbTodos);
         };
 
         fetchData();
-    }, [])
-
+    }, [prefix]);
 
     return (
         <div className='home-container'>
+            <input
+                type = 'text'
+                placeholder = 'Search'
+                onChange = {(e) => setPrefix(e.target.value)}
+                value = {prefix}
+            />
+
             {/* todo list */}
             <div>
                 {todos.map(t => (

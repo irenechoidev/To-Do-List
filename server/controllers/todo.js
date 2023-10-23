@@ -64,9 +64,10 @@ exports.deleteTodo = async (req, res) => {
 exports.getTodos = async (req, res) => {
     // const username = req.params.username;
     const { username } = req.params;
+    const prefix = req.params.prefix || '';
     
-    // const todos = await Todo.find({ username: username });
-    const todos = await Todo.find({ username });
+    // const todos = await Todo.find({ username: username, title: { $regex: prefix, $options: "i" }});
+    const todos = await Todo.find({ username, title: { $regex: prefix, $options: "i" } });
 
     // sort Date from biggest to smallest (most recent at top)
     todos.sort((a, b) => b.createdDate - a.createdDate);
