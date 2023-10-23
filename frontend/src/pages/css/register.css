@@ -1,0 +1,11 @@
+.register-container {
+    height: 100vh;
+    overflow: auto;
+    align-items: center;
+    display: flex;
+}
+
+.register-container h1 {
+    margin: auto;
+    margin-top: 20%;
+}

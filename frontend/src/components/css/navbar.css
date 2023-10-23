@@ -15,27 +15,26 @@
     color: #a48213;
 }
 
-.navbar .logout {
+.navbar .button-container {
     margin-left: auto;
+    align-items: center;
+    display: flex;
 }
 
-.navbar .logout button {
-    padding: 10px;
-    font-size: 20px;
+.navbar i {
+    width: 42px;
+    height: 42px;
+    font-size: 26px;
+    margin-top: 15px;
+    margin-left: 15px;
     cursor: pointer;
-    border: none;
 }
 
-.navbar .logout button:hover {
-  background: #918b8b;
+.navbar i:hover {
   color: white;
 }
 
-.navbar .add-todo {
-    margin-left: auto;
-}
-
-.navbar .add-todo button {
+.navbar .add-todo-button {
     border-radius: 50%;
     cursor: pointer;
     border: none;
@@ -46,6 +45,6 @@
     height: 42px;
 }
 
-.navbar .add-todo button:hover {
+.navbar .add-todo-button:hover {
     background: orangered;
 }

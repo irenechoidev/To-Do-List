@@ -13,17 +13,16 @@ const Navbar = () => {
                 Todo List
             </h3>
 
+
             {isAuthenticated() && (
-                <div className='logout'>
-                    <button onClick={logout}>Logout</button>
+                <div className='button-container'>
+                    <button className='add-todo-button' onClick={() => navigate('/create')}>
+                        +
+                    </button>
+
+                    <i className ='fas fa-sign-out-alt' onClick={logout} />
                 </div>
             )}
-
-            <div className='add-todo'>
-                <button onClick={() => navigate('/create')}>
-                    +
-                </button>
-            </div>
         </div>
     );
 }
