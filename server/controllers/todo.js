@@ -4,6 +4,7 @@ exports.createTodo = async (req, res) => {
     const todo = new Todo({
         title: req.body.title,
         description: req.body.description,
+        username: req.body.username,
         createdDate: new Date(),
         completed: false
     });
@@ -61,6 +62,11 @@ exports.deleteTodo = async (req, res) => {
 
 
 exports.getTodos = async (req, res) => {
-    const todos = await Todo.find({});
+    // const username = req.params.username;
+    const { username } = req.params;
+    
+    // const todos = await Todo.find({ username: username });
+    const todos = await Todo.find({ username });
+
     res.json(todos);  
 }

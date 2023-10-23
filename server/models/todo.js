@@ -17,6 +17,10 @@ const TodoSchema = new Schema({
     completed:{
         type: Boolean,
         required: true
+    },
+    username: {
+        type: String,
+        required: true
     }
 });
  
