@@ -8,6 +8,7 @@ import Details from './pages/Details';
 import DeadPage from './pages/DeadPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Update from './pages/Update';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path = '/' element = {isAuthenticated() ? <Home />: <Login />} />
           {AuthenticatedRoute('/create', <Create />)}
+          {AuthenticatedRoute('/update/:id', <Update />)}
           {AuthenticatedRoute('/todo/:id', <Details />)}
           {UnauthenticatedRoute('/register', <Register />)}
           <Route path = '*' element = {<DeadPage />} />

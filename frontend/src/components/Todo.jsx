@@ -22,6 +22,10 @@ const Todo = ({ id, title, description, isDetails }) => {
         navigate('/');
     }
 
+    const toUpdate = () => {
+        navigate(`/update/${id}`);
+    };
+
     return (
         <div className = {containerClassName} onClick={toDetails}>
             <div className = 'todo-header'>
@@ -30,7 +34,7 @@ const Todo = ({ id, title, description, isDetails }) => {
                 {isDetails && (
                     <div className='buttons-container'>
                         <i className ='fas fa-trash-alt' onClick={handleDelete}/>
-                        <i className ='fas fa-edit' />
+                        <i className ='fas fa-edit' onClickCapture={toUpdate} />
                     </div>
                 )}
             </div>
