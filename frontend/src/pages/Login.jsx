@@ -10,7 +10,13 @@ const Login = () => {
         e.preventDefault();
         const requestBody = { username, password };
 
-        await login(requestBody);
+        const isSuccessful = await login(requestBody);
+        
+        if (isSuccessful) {
+            window.location.reload();
+        } else {
+            alert("Something went wrong");
+        }
     }
 
     return ( 

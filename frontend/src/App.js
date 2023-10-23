@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { isAuthenticated } from './utils/isAuthenticated';
+import { AuthenticatedRoute } from './utils/protectedRoutes';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Create from './pages/Create';
@@ -13,10 +15,9 @@ function App() {
         <Navbar />
 
         <Routes>
-          <Route path = '/' element = {<Home />} />
-          <Route path = '/create' element = {<Create />} />
-          <Route path = '/todo/:id' element = {<Details />} />
-          <Route path = '/login' element = {<Login />} />
+          <Route path = '/' element = {isAuthenticated() ? <Home />: <Login />} />
+          {AuthenticatedRoute('/create', <Create />)}
+          {AuthenticatedRoute('/todo/:id', <Details />)}
           <Route path = '*' element = {<DeadPage />} />
         </Routes>
       </BrowserRouter>

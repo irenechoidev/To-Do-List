@@ -8,4 +8,6 @@ export const login = async (body) => {
     if (successful) {
         window.localStorage.setItem("token", token);
     }
+
+    return successful;
 }
