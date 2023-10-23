@@ -1,12 +1,24 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { createTodo } from "./operations/create-operations";
+import { getUsername } from "../utils/getUsername";
 import './css/create.css';
 
 const Create = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
-    const handleSubmit = (e) => {
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const username = getUsername() || '';
+        const requestBody = { username, title, description };
+
+        await createTodo(requestBody);
+        
+        navigate('/');
     }
 
     return ( 

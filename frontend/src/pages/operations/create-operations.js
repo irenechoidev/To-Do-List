@@ -2,10 +2,7 @@ import axios from 'axios';
 import { API_ENDPOINT } from '../../constants';
 
 export const createTodo = async (body) => {
-    const response = await axios.post(`${API_ENDPOINT}/todo/create`, body);
-    const object = response.data;
-
-    return object;
+    await axios.post(`${API_ENDPOINT}/todo`, body);
 }
 
 
