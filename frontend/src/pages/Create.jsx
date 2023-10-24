@@ -29,6 +29,11 @@ const Create = () => {
         navigate('/');
     }
 
+    const handleRemoveImage = () => {
+        document.getElementById('createFile').value = '';
+        setFile(null);
+    }
+
     return ( 
         <div className = 'create-todo'>
             <form onSubmit={handleSubmit}>
@@ -51,17 +56,23 @@ const Create = () => {
                 />
 
                 <label>Image</label>
+                
                 <input
                     type="file"
+                    id = "createFile"
                     onChange={(e) => setFile(e.target.files[0])}
                     accept="image/*"
                 />
 
                {file && (
-                    <img 
-                        src={URL.createObjectURL(file)} 
-                        alt="Failed to Load" 
-                    />
+                    <div className="image-container">
+                        <span onClick={handleRemoveImage}>X</span>
+
+                        <img 
+                            src={URL.createObjectURL(file)} 
+                            alt="Failed to Load" 
+                        />
+                    </div>
                )}
 
                 <div className='button-container'>

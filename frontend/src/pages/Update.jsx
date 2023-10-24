@@ -46,6 +46,13 @@ const Update = () => {
         navigate('/');
     }
 
+    const handleRemoveImage = () => {
+        document.getElementById('updateFile').value = '';
+
+        setFile(null);
+        setImgURL('');
+    }
+
     if (todo && todo.message) {
         navigate('/');
     }
@@ -74,15 +81,20 @@ const Update = () => {
                 <label>Image</label>
                 <input
                     type="file"
+                    id="updateFile"
                     onChange={(e) => setFile(e.target.files[0])}
                     accept="image/*"
                 />
 
-               {imgURL && (
-                    <img 
-                        src={file? URL.createObjectURL(file) : `${API_ENDPOINT}/${imgURL}`} 
-                        alt="Failed to Load" 
-                    />
+               {(imgURL || file) && (
+                    <div className="image-container">
+                        <span onClick={handleRemoveImage}>X</span>
+                        
+                        <img 
+                            src={file? URL.createObjectURL(file) : `${API_ENDPOINT}/${imgURL}`} 
+                            alt="Failed to Load" 
+                        />
+                    </div>
                )}
 
                 <div className='button-container'>

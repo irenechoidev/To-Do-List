@@ -32,7 +32,7 @@
     margin-top: 35px;
 }
 
-.create-todo button {
+.create-todo .button-container button {
     width: 50%;
     color: white;
     background: orange;
@@ -44,11 +44,31 @@
     font-size: 20px;
 }
 
-.create-todo button:hover {
+.create-todo .button-container button:hover {
     background: orangered;
 }
 
-.create-todo img {
+.create-todo .image-container {
+    position: relative;
+}
+
+.create-todo .image-container span {
+    border: 0;
+    border-radius: 50%; 
+    background-color: silver;
+    padding: 5px 10px;
+    position: absolute;
+    cursor: pointer;
+    font-size: 26px;   
+    right: 10px;
+    top: 10px;
+}  
+
+.create-todo .image-container span:hover {
+    background: lightgrey;
+}  
+
+.create-todo .image-container img {
     width: 600px;
     border: 1px solid black;
     height: 300px;

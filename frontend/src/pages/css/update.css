@@ -32,7 +32,7 @@
     margin-top: 35px;
 }
 
-.update-todo button {
+.update-todo .button-container button {
     width: 50%;
     color: white;
     background: orange;
@@ -43,11 +43,31 @@
     font-size: 20px;
 }
 
-.update-todo button:hover {
+.update-todo .button-container button:hover {
     background: orangered;
 }
 
-.update-todo img {
+.update-todo .image-container {
+    position: relative;
+}
+
+.update-todo .image-container span {
+    border: 0;
+    border-radius: 50%; 
+    background-color: silver;
+    padding: 5px 10px;
+    position: absolute;
+    cursor: pointer;
+    font-size: 26px;   
+    right: 10px;
+    top: 10px;
+}  
+
+.update-todo .image-container span:hover {
+    background: lightgrey;
+}  
+
+.update-todo .image-container img {
     width: 600px;
     border: 1px solid black;
     height: 300px;
