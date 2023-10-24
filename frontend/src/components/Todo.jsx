@@ -35,7 +35,7 @@ const Todo = ({ id, title, description, imgURL, isDetails }) => {
                 {isDetails && (
                     <div className='buttons-container'>
                         <i className ='fas fa-trash-alt' onClick={handleDelete}/>
-                        <i className ='fas fa-edit' onClickCapture={toUpdate} />
+                        <i className ='fas fa-edit' onClick={toUpdate} />
                     </div>
                 )}
             </div>

@@ -1,5 +1,5 @@
 .create-todo {
-    height: 100vh;
+    height: 94vh;
     overflow: auto;
 }
 
@@ -38,6 +38,7 @@
     background: orange;
     border: 0;
     padding: 8px;
+    margin-bottom: 50px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 20px;
@@ -45,4 +46,10 @@
 
 .create-todo button:hover {
     background: orangered;
+}
+
+.create-todo img {
+    width: 600px;
+    border: 1px solid black;
+    height: 300px;
 }
