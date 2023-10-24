@@ -44,18 +44,28 @@ exports.getTodo =  async (req, res) => {
 }
 
 exports.updateTodo = async (req, res) => {
+    const upload = createUpload();
     let message = 'updated successfully';
+
+    upload(req, res, async () => {
+        const file = req.file;
+        const imgURL = file? file.filename: '';
+
+        const { id } = req.params;
+        const { title, description } = req.body;
     
-    const { id } = req.params;
-    const { title, description } = req.body;
+        try {
+            const todo = await Todo.findOne({ _id: id });
+            await Todo.updateOne({ _id: id }, { title , description, imgURL });
 
-    try {
-        await Todo.updateOne({ _id: id }, { title , description });
-    } catch (error) {
-        message = error.message; 
-    }
-
-    res.json({ message });
+            const pathname = path.join(__dirname, '../', 'public', todo.imgURL);
+            fs.unlink(pathname, _ => _);
+        } catch (error) {
+            message = error.message; 
+        }
+    
+        res.json({ message });
+    });
 }
 
 exports.deleteTodo = async (req, res) => {

@@ -46,3 +46,9 @@
 .update-todo button:hover {
     background: orangered;
 }
+
+.update-todo img {
+    width: 600px;
+    border: 1px solid black;
+    height: 300px;
+}
