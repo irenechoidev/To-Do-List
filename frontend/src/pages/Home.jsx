@@ -26,7 +26,7 @@ const Home = () => {
             />
 
             {/* todo list */}
-            <div>
+            <div className='todo-list'>
                 {todos.map(t => (
                     <Todo 
                         key = {t._id}

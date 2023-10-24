@@ -1,6 +1,6 @@
 .navbar {
     background: lightpink;
-    min-height: 30px;
+    height: 6vh;
     padding: 20px;
     display: flex;
     align-items: center;

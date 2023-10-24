@@ -10,6 +10,10 @@ const TodoSchema = new Schema({
         type: String,
         required: false
     },
+    imgURL: {
+        type: String,
+        required: false
+    },
     createdDate: {
         type: Date,
         required: true

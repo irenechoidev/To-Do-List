@@ -1,22 +1,31 @@
 const Todo = require('../models/todo');
+const { createUpload } = require('../utils/createUpload');
 
-exports.createTodo = async (req, res) => {
-    const todo = new Todo({
-        title: req.body.title,
-        description: req.body.description,
-        username: req.body.username,
-        createdDate: new Date(),
-        completed: false
+exports.createTodo = (req, res) => {
+    const upload = createUpload();
+
+    upload(req, res, async () => {
+        const file = req.file;
+        const imgURL = file? file.filename: '';
+
+        const todo = new Todo({
+            title: req.body.title,
+            description: req.body.description,
+            username: req.body.username,
+            createdDate: new Date(),
+            completed: false,
+            imgURL
+        });
+    
+        let message = 'todo created';
+        try {
+            await todo.save();
+        } catch (error) {
+            message = error.message;
+        }
+    
+        res.json({ message });
     });
-
-    let message = 'todo created';
-    try {
-        await todo.save();
-    } catch (error) {
-        message = error.message;
-    }
-
-    res.json({ message });
 }
 
 exports.getTodo =  async (req, res) => {

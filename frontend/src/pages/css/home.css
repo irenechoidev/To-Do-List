@@ -1,5 +1,5 @@
 .home-container {
-    height: 100vh;
+    height: 94vh;
     overflow: auto;
 }
 
@@ -8,4 +8,8 @@
     width: 35%;
     margin: 30px auto;
     padding: 10px;
+}
+
+.home-container .todo-list:last-child {
+    margin-bottom: 50px;
 }
