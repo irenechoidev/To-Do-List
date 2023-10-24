@@ -33,6 +33,7 @@ const Home = () => {
                         id = {t._id}
                         title = {t.title}
                         description = {t.description}
+                        imgURL = {t.imgURL}
                         isDetails = {false}
                     />
                 ))}

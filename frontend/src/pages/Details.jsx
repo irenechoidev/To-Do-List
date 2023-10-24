@@ -30,6 +30,7 @@ const Details = () => {
                     id = {todo._id}
                     title = {todo.title}
                     description = {todo.description}
+                    imgURL = {todo.imgURL}
                     isDetails = {true}
                 />
            )}

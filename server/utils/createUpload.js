@@ -5,7 +5,7 @@ const path = require('path');
 const IMAGE_KEY = "image";
 
 exports.createUpload = () => {
-    const destination = path.join(__dirname, '../', 'images');
+    const destination = path.join(__dirname, '../', 'public');
     const storage = multer.diskStorage({
         destination,
         filename: (_, file, cb) => {

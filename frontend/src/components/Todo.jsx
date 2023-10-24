@@ -1,9 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { deleteTodo } from '../pages/operations/details-operations';
+import { API_ENDPOINT } from '../constants';
 import './css/todo.css';
 
-const Todo = ({ id, title, description, isDetails }) => {
+const Todo = ({ id, title, description, imgURL, isDetails }) => {
     const navigate = useNavigate();
 
     let containerClassName = 'default-todo';
@@ -40,6 +41,13 @@ const Todo = ({ id, title, description, isDetails }) => {
             </div>
 
             <p>{description}</p>
+
+            {imgURL && (
+                <img
+                    src = {`${API_ENDPOINT}/${imgURL}`}
+                    alt = "Failed To Load"
+                />
+            )}
         </div>
     );
 }
