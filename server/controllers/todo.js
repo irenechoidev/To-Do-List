@@ -1,6 +1,7 @@
 const Todo = require('../models/todo');
 const { createUpload } = require('../utils/createUpload');
 const path = require('path');
+const fs = require('fs');
 
 exports.createTodo = (req, res) => {
     const upload = createUpload();
@@ -62,7 +63,11 @@ exports.deleteTodo = async (req, res) => {
     const { id } = req.params;
     
     try {
+        const todo = await Todo.findOne({ _id : id });
         await Todo.deleteOne({ _id: id });
+
+        const pathname = path.join(__dirname, '../', 'public', todo.imgURL);
+        fs.unlink(pathname, _ => _);
     } catch (error) {
         message = error.message;
     }
