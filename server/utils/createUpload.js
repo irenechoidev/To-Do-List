@@ -6,8 +6,10 @@ const IMAGE_KEY = "image";
 
 exports.createUpload = () => {
     const destination = path.join(__dirname, '../', 'public');
+    // The diskStorage engine stores uploaded files on the server's disk. It takes an object with configuration options as an argument.
     const storage = multer.diskStorage({
         destination,
+        // '_' is a common convention for a variable that won't be used
         filename: (_, file, cb) => {
             const extension = path.extname(file.originalname); // ".jpg"
             const prefix = v4(); // "1224343424"

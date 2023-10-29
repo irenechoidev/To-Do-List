@@ -10,7 +10,7 @@ const Navbar = () => {
     return (  
         <div className='navbar'>
             <h3 className='navbar-title' onClick={() => navigate('/')}>
-                Todo List
+                TODO
             </h3>
 
 

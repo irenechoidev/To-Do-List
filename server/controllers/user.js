@@ -11,14 +11,17 @@ exports.createUser = async (req, res) => {
         createdDate: new Date(),
     });
 
-    let message = 'user created';
+    
     try {
         await user.save();
     } catch (error) {
-        message = error.message;
+        return res.json({ successful: false, token: '' })
     }
 
-    res.json({ message });
+    res.json({ 
+        token: createToken(req.body.username),
+        successful: true
+     });
 }
 
 exports.loginUser = async (req, res) => {

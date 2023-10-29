@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"
 import { login } from './operations/login-operations';
+
 import './css/login.css';
 
 const Login = () => {
@@ -18,6 +20,13 @@ const Login = () => {
             alert("Something went wrong");
         }
     }
+
+    const navigate = useNavigate();
+    const handleRedirect = () => {
+        navigate('/register');
+    }
+
+    
 
     return ( 
         <div className='login-container'>
@@ -45,8 +54,14 @@ const Login = () => {
                 <div className='button-container'>
                     <button>Submit</button>
                 </div>
+                <h4>Dont't have an account?</h4>
+                <div className='button-container'>
+                    <button onClick={handleRedirect} >Sign Up</button>
+                </div>
+
             </form>
-        </div>
+        </div>   
+       
      );
 }
 

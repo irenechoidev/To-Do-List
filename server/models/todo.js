@@ -29,4 +29,6 @@ const TodoSchema = new Schema({
 });
  
 const Todo = mongoose.model('todo', TodoSchema);
+// 'todo' is the name of the MongoDB collection that this Mongoose model will be associated with. 
+// If the "todo" collection doesn't exist in the database, Mongoose will create it when you interact with this model for the first time.
 module.exports = Todo;
